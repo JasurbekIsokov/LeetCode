@@ -338,22 +338,35 @@
 
 // ////////////////////////////////////////////////////////////////////////
 
-nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
-var maxSubArray = function (nums) {
-  let sum = 0;
-  let max = -Infinity;
+// nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+// var maxSubArray = function (nums) {
+//   let sum = 0;
+//   let max = -Infinity;
 
-  for (let num of nums) {
-    sum += num;
-    console.log(sum);
-    if (sum > max) max = sum;
-    if (sum < 0) sum = 0;
+//   for (let num of nums) {
+//     sum += num;
+//     console.log(sum);
+//     if (sum > max) max = sum;
+//     if (sum < 0) sum = 0;
+//   }
+
+//   return max;
+// };
+
+// console.log(maxSubArray(nums));
+
+// ////////////////////////////////////////////////////////////////////////
+
+s = "   fly me   to   the moon  ";
+
+var lengthOfLastWord = function (s, l = 0) {
+  for (let n of s.split(" ")) {
+    if (n) l = n.length;
   }
-
-  return max;
+  return l;
 };
 
-console.log(maxSubArray(nums));
+console.log(lengthOfLastWord(s));
 
 // ////////////////////////////////////////////////////////////////////////
 
