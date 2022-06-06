@@ -76,7 +76,7 @@
 // let D = 500;
 // let M = 1000;
 
-// var romanToInt = function (s) {
+// var romanTolet = function (s) {
 //   switch (s) {
 //     case I:
 //       return 1;
@@ -185,9 +185,110 @@
 
 // console.log(addTwoNumbers(l1, l2));
 
-let s = "()[]";
-let a = "][)(";
+// let s = "()[]";
+// let a = "][)(";
 
-var isValid = function (s) {};
+// var isValid = function (s) {
+//   console.log;
+// };
 
-isValid(s);
+// isValid(s);
+
+// ////////////////////////////////////////////////////////////////////////
+
+// height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+
+// var maxAr = function (height) {
+//   let maxNum = height[0];
+
+//   for (let i = 0; i < height.length; i++) {
+//     if (maxNum < height[i]) {
+//       maxNum = height[i];
+//     }
+//   }
+
+//   return maxNum;
+// };
+
+// var minAr = function (height) {
+//   let minNum = height[0];
+
+//   for (let i = 0; i < height.length; i++) {
+//     if (minNum > height[i]) {
+//       minNum = height[i];
+//     }
+//   }
+
+//   return minNum;
+// };
+
+// console.log(maxAr(height), minAr(height));
+
+// var maxArea = function (height) {
+//   let m = height.length;
+//   console.log(m);
+// };
+
+// maxArea(height);
+
+// ////////////////////////////////////////////////////////////////////////
+
+// height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+
+// var maxArea = function (height) {
+//   let mArea = 0;
+//   let width = 0;
+//   for (let left = 0; left < height.length; left++) {
+//     for (let right = left + 1; right < height.length; right++) {
+//       width = right - left;
+//       mArea = Math.max(mArea, Math.min(height[left], height[right]) * width);
+//     }
+//   }
+
+//   return mArea;
+// };
+
+// console.log(maxArea(height));
+
+// Container With Most Water
+
+// let maxArea = function (height) {
+//   let maxarea = 0;
+//   let left = 0;
+//   let right = height.length - 1;
+//   while (left < right) {
+//     let width = right - left;
+//     maxarea = Math.max(maxarea, Math.min(height[left], height[right]) * width);
+//     if (height[left] <= height[right]) {
+//       left++;
+//     } else {
+//       right--;
+//     }
+//   }
+//   return maxarea;
+// };
+
+// console.log(maxArea(height));
+
+// ////////////////////////////////////////////////////////////////////////
+
+// var mergeTwoLists = function (list1, list2) {
+//   if (!list1) return list2;
+//   if (!list2) return list1;
+
+//   let min, max;
+
+//   if (list2.val > list1.val) {
+//     min = list1;
+//     max = list2;
+//   } else {
+//     min = list2;
+//     max = list1;
+//   }
+
+//   min.next = mergeTwoLists(min.next, max);
+
+//   return min;
+// };
+
+// ////////////////////////////////////////////////////////////////////////
