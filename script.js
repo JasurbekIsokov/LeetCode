@@ -293,8 +293,8 @@
 
 // ////////////////////////////////////////////////////////////////////////
 
-nums = [1, 3, 5, 0, 6];
-target = 8;
+// nums = [1, 3, 5, 0, 6];
+// target = 8;
 
 // let sortMethod = (arr) => {
 //   console.log(arr.sort());
@@ -311,26 +311,74 @@ target = 8;
 // };
 
 // console.log(searchInsert(nums, target));
+// ////////////////////////////////////////////////////////////////////////
 
 // sortMethod(nums);
 
-nums = [1, 2, 3];
-var permute = function (nums, index = 0, permutation = [], result = []) {
-  if (index === nums.length) {
-    result.push(permutation.slice());
+// nums = [1, 2, 3];
+// var permute = function (nums, index = 0, permutation = [], result = []) {
+//   if (index === nums.length) {
+//     result.push(permutation.slice());
+//   }
+
+//   for (let i = index; i < nums.length; i++) {
+//     permutation.push(nums[i]);
+
+//     const choices = nums.filter((nums, index) => index != i);
+
+//     permute(choices, index, permutation, result);
+
+//     permutation.pop();
+//   }
+
+//   return result;
+// };
+
+// console.log(permute(nums));
+
+// ////////////////////////////////////////////////////////////////////////
+
+nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+var maxSubArray = function (nums) {
+  let sum = 0;
+  let max = -Infinity;
+
+  for (let num of nums) {
+    sum += num;
+    console.log(sum);
+    if (sum > max) max = sum;
+    if (sum < 0) sum = 0;
   }
 
-  for (let i = index; i < nums.length; i++) {
-    permutation.push(nums[i]);
-
-    const choices = nums.filter((nums, index) => index != i);
-
-    permute(choices, index, permutation, result);
-
-    permutation.pop();
-  }
-
-  return result;
+  return max;
 };
 
-console.log(permute(nums));
+console.log(maxSubArray(nums));
+
+// ////////////////////////////////////////////////////////////////////////
+
+// Input: matrix = [
+//   [5, 1, 9, 11],
+//   [2, 4, 8, 10],
+//   [13, 3, 6, 7],
+//   [15, 14, 12, 16],
+// ];
+// Output: [
+//   [15, 13, 2, 5],
+//   [14, 3, 4, 1],
+//   [12, 6, 8, 9],
+//   [16, 7, 10, 11],
+// ];
+
+// var rotate = function (matrix) {
+//   let newMat = [];
+//   let newArr2 = [];
+//   for (let i = 0; i < matrix.length; i++) {
+//     for (let j = 0; j < matrix[i].length; j++) {
+//       newMat.push(matrix[i][j]);
+//     }
+//   }
+//   return newMat;
+// };
+
+// console.log(rotate(matrix));
