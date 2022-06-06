@@ -370,20 +370,20 @@
 
 // ////////////////////////////////////////////////////////////////////////
 
-Input: digits = [6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3];
-Output: [1, 2, 4];
+// Input: digits = [6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3];
+// Output: [1, 2, 4];
 
-var plusOne = function (digits, arr = []) {
-  let n = BigInt(digits.join("")) + 1n;
+// var plusOne = function (digits, arr = []) {
+//   let n = BigInt(digits.join("")) + 1n;
 
-  console.log(n);
-  for (let m of n.toString()) {
-    arr.push(m);
-  }
-  return arr;
-};
+//   console.log(n);
+//   for (let m of n.toString()) {
+//     arr.push(m);
+//   }
+//   return arr;
+// };
 
-console.log(plusOne(digits));
+// console.log(plusOne(digits));
 // ////////////////////////////////////////////////////////////////////////
 
 // Input: matrix = [
@@ -411,3 +411,16 @@ console.log(plusOne(digits));
 // };
 
 // console.log(rotate(matrix));
+
+// ////////////////////////////////////////////////////////////////////////
+
+// let x = 8;
+// var mySqrt = function (x) {
+//   return Math.floor(Math.sqrt(x));
+// };
+
+// console.log(mySqrt(x));
+
+// ////////////////////////////////////////////////////////////////////////
+
+var climbStairs = function (n) {};
