@@ -292,3 +292,45 @@
 // };
 
 // ////////////////////////////////////////////////////////////////////////
+
+nums = [1, 3, 5, 0, 6];
+target = 8;
+
+// let sortMethod = (arr) => {
+//   console.log(arr.sort());
+// };
+
+// var searchInsert = function (nums, target) {
+//   for (let i = 0; i < 2; i++) {
+//     if (nums.includes(target)) {
+//       return nums.sort().indexOf(target);
+//     } else {
+//       nums.push(target);
+//     }
+//   }
+// };
+
+// console.log(searchInsert(nums, target));
+
+// sortMethod(nums);
+
+nums = [1, 2, 3];
+var permute = function (nums, index = 0, permutation = [], result = []) {
+  if (index === nums.length) {
+    result.push(permutation.slice());
+  }
+
+  for (let i = index; i < nums.length; i++) {
+    permutation.push(nums[i]);
+
+    const choices = nums.filter((nums, index) => index != i);
+
+    permute(choices, index, permutation, result);
+
+    permutation.pop();
+  }
+
+  return result;
+};
+
+console.log(permute(nums));
