@@ -423,22 +423,58 @@
 
 // ////////////////////////////////////////////////////////////////////////
 
-n = 4;
+// n = 4;
 
-var climbStairs = function (n) {
-  if (n <= 1) {
-    return 1;
+// var climbStairs = function (n) {
+//   if (n <= 1) {
+//     return 1;
+//   }
+
+//   let ways = [];
+//   ways[0] = 1;
+//   ways[1] = 1;
+
+//   for (let i = 2; i <= n; i++) {
+//     ways[i] = ways[i - 2] + ways[i - 1];
+//   }
+
+//   return ways[n];
+// };
+
+// console.log(climbStairs(n));
+
+// ////////////////////////////////////////////////////////////////////////
+
+// let nums1 = [1, 2, 3, 0, 0, 0];
+// let m = 3;
+// let nums2 = [2, 5, 6];
+// let n = 3;
+// // Output: [1, 2, 2, 3, 5, 6];
+
+// var merge = function (nums1, m, nums2, n) {
+//   let nums = nums1.splice(m, nums1.length);
+//   let num = nums2.splice(n, nums2.length);
+//   a = [...nums1, ...nums2].sort();
+//   nums1 = a;
+//   return nums1;
+// };
+
+// console.log(merge(nums1, m, nums2, n));
+
+// ////////////////////////////////////////////////////////////////////////
+
+Input: head = [1, 1, 2, 3, 3];
+Output: [1, 2, 3];
+
+var deleteDuplicates = function (head) {
+  let a = [];
+  for (let i = 0; i < head.length; i++) {
+    if (head[i - 1] !== head[i]) {
+      a.push(head[i]);
+    }
   }
 
-  let ways = [];
-  ways[0] = 1;
-  ways[1] = 1;
-
-  for (let i = 2; i <= n; i++) {
-    ways[i] = ways[i - 2] + ways[i - 1];
-  }
-
-  return ways[n];
+  return a;
 };
 
-console.log(climbStairs(n));
+console.log(deleteDuplicates(head));
