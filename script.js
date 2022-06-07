@@ -463,18 +463,20 @@
 
 // ////////////////////////////////////////////////////////////////////////
 
-Input: head = [1, 1, 2, 3, 3];
-Output: [1, 2, 3];
+// Input: head = [1, 1, 2, 3, 3];
+// Output: [1, 2, 3];
 
-var deleteDuplicates = function (head) {
-  let a = [];
-  for (let i = 0; i < head.length; i++) {
-    if (head[i - 1] !== head[i]) {
-      a.push(head[i]);
-    }
-  }
+// var deleteDuplicates = function (head) {
+//   let a = [];
+//   for (let i = 0; i < head.length; i++) {
+//     if (head[i - 1] !== head[i]) {
+//       a.push(head[i]);
+//     }
+//   }
 
-  return a;
-};
+//   return a;
+// };
 
-console.log(deleteDuplicates(head));
+// console.log(deleteDuplicates(head));
+
+// ////////////////////////////////////////////////////////////////////////
