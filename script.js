@@ -480,3 +480,12 @@
 // console.log(deleteDuplicates(head));
 
 // ////////////////////////////////////////////////////////////////////////
+p = [1, 2];
+q = [1, null, 2];
+Output: false;
+
+var isSameTree = function (p, q) {
+  return JSON.stringify(q) == JSON.stringify(p);
+};
+
+console.log(isSameTree(p, q));
