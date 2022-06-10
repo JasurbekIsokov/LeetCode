@@ -480,12 +480,38 @@
 // console.log(deleteDuplicates(head));
 
 // ////////////////////////////////////////////////////////////////////////
-p = [1, 2];
-q = [1, null, 2];
-Output: false;
 
-var isSameTree = function (p, q) {
-  return JSON.stringify(q) == JSON.stringify(p);
+// p = [1, 2];
+// q = [1, null, 2];
+// Output: false;
+
+// var isSameTree = function (p, q) {
+//   return JSON.stringify(q) == JSON.stringify(p);
+// };
+
+// console.log(isSameTree(p, q));
+
+// ////////////////////////////////////////////////////////////////////////
+
+let s1 = "aabcc";
+let s2 = "dbbca";
+let s3 = "aadbbcbcac";
+Output: true;
+
+var isInterleave = function (s1, s2, s3) {
+  s1 = s1.concat(s2);
+  let arr = [];
+  if (s1.length === s3.length) {
+    for (e of s3) {
+      arr.push(e);
+    }
+    console.log(arr);
+    for (let i = 0; i < s1.length; i++) {
+      if (arr.includes(s1[i]))
+        arr.splice(arr.indexOf(s1[i]), arr.indexOf(s1[i]) + 1);
+    }
+  }
+  return arr.length === 0 ? true : false;
 };
 
-console.log(isSameTree(p, q));
+console.log(isInterleave(s1, s2, s3));
