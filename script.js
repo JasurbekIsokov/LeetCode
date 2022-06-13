@@ -493,25 +493,72 @@
 
 // ////////////////////////////////////////////////////////////////////////
 
-let s1 = "aabcc";
-let s2 = "dbbca";
-let s3 = "aadbbcbcac";
-Output: true;
+// "aabcc";
+// "dbbca";
+// "aadbbbaccc";
 
-var isInterleave = function (s1, s2, s3) {
-  s1 = s1.concat(s2);
-  let arr = [];
-  if (s1.length === s3.length) {
-    for (e of s3) {
-      arr.push(e);
-    }
-    console.log(arr);
-    for (let i = 0; i < s1.length; i++) {
-      if (arr.includes(s1[i]))
-        arr.splice(arr.indexOf(s1[i]), arr.indexOf(s1[i]) + 1);
-    }
-  }
-  return arr.length === 0 ? true : false;
-};
+// let s1 = "aabcc";
+// let s2 = "dbbca";
+// let s3 = "aadbbbaccc";
+// Output: true;
 
-console.log(isInterleave(s1, s2, s3));
+// var isInterleave = function (s1, s2, s3) {
+//   s1 = s1.concat(s2);
+//   let arr = [];
+//   if (s1.length === s3.length) {
+//     for (e of s3) {
+//       arr.push(e);
+//     }
+//     console.log(arr);
+//     for (let i = 0; i < s1.length; i++) {
+//       if (arr.includes(s1[i]))
+//         arr.splice(arr.indexOf(s1[i]), arr.indexOf(s1[i]) + 1);
+//     }
+//   }
+//   return arr.length === 0 ? true : false;
+// };
+
+// console.log(isInterleave(s1, s2, s3));
+
+// ////////////////////////////////////////////////////////////////////////
+
+// let n = 1111111;
+
+// var isHappy = function (n) {
+//   n = n.toString();
+
+//   if (n === "1") return true;
+
+//   let sum = 0;
+//   for (let i = 0; i < n.length; i++) {
+//     sum += n[i] ** 2;
+//   }
+
+//   return isHappy(sum);
+// };
+
+// const isHappy = function (num) {
+//   let slow = num,
+//     fast = num;
+//   while (true) {
+//     slow = findSquare(slow);
+//     fast = findSquare(findSquare(fast));
+//     console.log(slow, fast);
+//     if (slow === fast) {
+//       break;
+//     }
+//   }
+//   return slow === 1;
+// };
+
+// function findSquare(num) {
+//   let sum = 0;
+//   while (num > 0) {
+//     let digit = num % 10;
+//     sum += digit ** 2;
+//     num = Math.floor(num / 10);
+//   }
+//   return sum;
+// }
+
+// console.log(isHappy(n));
