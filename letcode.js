@@ -25,28 +25,49 @@
 
 // 26. Remove Duplicates from Sorted Array
 
-let nums = [1, 1, 2];
+// let nums = [1, 1, 2];
 
-var removeDuplicates = function (nums) {
-  let end = nums.length;
-  let remove = function (i) {
-    for (var j = i; j + 1 < end; j++) {
-      nums[j] = nums[j + 1];
-    }
-  };
+// var removeDuplicates = function (nums) {
+//   let end = nums.length;
+//   let remove = function (i) {
+//     for (var j = i; j + 1 < end; j++) {
+//       nums[j] = nums[j + 1];
+//     }
+//   };
 
-  var i;
-  for (i = 0; i < end; i++) {
-    while (i < end && nums.indexOf(nums[i]) < i) {
-      remove(i);
-      end--;
-    }
-  }
+//   var i;
+//   for (i = 0; i < end; i++) {
+//     while (i < end && nums.indexOf(nums[i]) < i) {
+//       remove(i);
+//       end--;
+//     }
+//   }
 
-  return end;
-};
-console.log(removeDuplicates(nums));
+//   return end;
+// };
+// console.log(removeDuplicates(nums));
 
 // /26. Remove Duplicates from Sorted Array
 
+// ----------------------------------------------------------------------
+
+// 88. Merge Sorted Array
+
+let nums1 = [1, 2, 3, 0, 0, 0];
+let m = 3;
+let nums2 = [2, 5, 6];
+let n = 3;
+
+var merge = function (nums1, m, nums2, n) {
+  for (let l = m; l < m + n; l++) {
+    console.log(l);
+    nums1[l] = nums2[l - m];
+  }
+
+  let sortArr = nums1.sort((a, b) => a - b);
+
+  return sortArr;
+};
+
+console.log(merge(nums1, m, nums2, n));
 // ----------------------------------------------------------------------
