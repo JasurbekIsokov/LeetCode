@@ -53,21 +53,26 @@
 
 // 88. Merge Sorted Array
 
-let nums1 = [1, 2, 3, 0, 0, 0];
-let m = 3;
-let nums2 = [2, 5, 6];
-let n = 3;
+// let nums1 = [1, 2, 3, 0, 0, 0];
+// let m = 3;
+// let nums2 = [2, 5, 6];
+// let n = 3;
 
-var merge = function (nums1, m, nums2, n) {
-  for (let l = m; l < m + n; l++) {
-    console.log(l);
-    nums1[l] = nums2[l - m];
-  }
+// var merge = function (nums1, m, nums2, n) {
+//   for (let l = m; l < m + n; l++) {
+//     console.log(l);
+//     nums1[l] = nums2[l - m];
+//   }
 
-  let sortArr = nums1.sort((a, b) => a - b);
+//   let sortArr = nums1.sort((a, b) => a - b);
 
-  return sortArr;
-};
+//   return sortArr;
+// };
 
-console.log(merge(nums1, m, nums2, n));
+// console.log(merge(nums1, m, nums2, n));
 // ----------------------------------------------------------------------
+// 121. Best Time to Buy and Sell Stock
+
+// let prices = [7, 1, 5, 3, 6, 4];
+
+// let prices = [7, 6, 4, 3, 1];
