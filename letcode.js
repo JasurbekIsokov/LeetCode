@@ -108,22 +108,46 @@
 
 // An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
-let s = "anagram";
-let t = "nagaraam";
+// let s = "anagram";
+// let t = "nagaraam";
 
-var isAnagram = function (s, t) {
-  if (s.length !== t.length) {
-    return false;
+// var isAnagram = function (s, t) {
+//   if (s.length !== t.length) {
+//     return false;
+//   }
+
+//   let sArr = s.split("");
+//   let tArr = t.split("");
+
+//   for (let i = 0; i < sArr.length; i++) {
+//     if (tArr.indexOf(sArr[i]) >= 0) tArr.splice(tArr.indexOf(sArr[i]), 1);
+//   }
+
+//   return tArr.length === 0;
+// };
+
+// console.log(isAnagram(s, t));
+
+// ----------------------------------------------------------------------
+
+// 1299. Replace Elements with Greatest Element on Right Side
+
+// Given an array arr, replace every element in that array with the greatest element among the elements to its right, and replace the last element with -1.
+
+// After doing so, return the array.
+
+let arr = [17, 18, 5, 4, 6, 1];
+
+var replaceElements = function (arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let max = -1;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] > max) max = arr[j];
+    }
+    newArr.push(max);
   }
-
-  let sArr = s.split("");
-  let tArr = t.split("");
-
-  for (let i = 0; i < sArr.length; i++) {
-    if (tArr.indexOf(sArr[i]) >= 0) tArr.splice(tArr.indexOf(sArr[i]), 1);
-  }
-
-  return tArr.length === 0;
+  return newArr;
 };
 
-console.log(isAnagram(s, t));
+console.log(replaceElements(arr));
