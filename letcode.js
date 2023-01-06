@@ -76,3 +76,26 @@
 // let prices = [7, 1, 5, 3, 6, 4];
 
 // let prices = [7, 6, 4, 3, 1];
+
+// ----------------------------------------------------------------------
+
+// 217. Contains Duplicate
+
+// Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+let nums = [2, 14, 18, 22, 22];
+
+var containsDuplicate = function (nums) {
+  let sortArr = nums.sort((a, b) => a - b);
+  let test = false;
+
+  for (let i = 0; i < sortArr.length; i++) {
+    if (sortArr[i] === sortArr[i + 1]) {
+      test = true;
+    }
+  }
+
+  return test;
+};
+
+console.log(containsDuplicate(nums));

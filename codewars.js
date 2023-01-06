@@ -33,31 +33,31 @@
 
 // Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
 
-let n = 493193;
+// let n = 493193;
 
-function digitalRoot(n) {
-  let str = String(n);
-  let sum = 0;
-  for (let i = 0; i < str.length; i++) {
-    sum += Number(str[i]);
-  }
+// function digitalRoot(n) {
+//   let str = String(n);
+//   let sum = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     sum += Number(str[i]);
+//   }
 
-  if (String(sum).length === 1) {
-    return sum;
-  }
+//   if (String(sum).length === 1) {
+//     return sum;
+//   }
 
-  str = String(sum);
-  let i = 0;
-  while (str.length > 1) {
-    sum = 0;
-    for (let i = 0; i < str.length; i++) {
-      sum += Number(str[i]);
-    }
-    str = String(sum);
-    i++;
-  }
+//   str = String(sum);
+//   let i = 0;
+//   while (str.length > 1) {
+//     sum = 0;
+//     for (let i = 0; i < str.length; i++) {
+//       sum += Number(str[i]);
+//     }
+//     str = String(sum);
+//     i++;
+//   }
 
-  return sum;
-}
+//   return sum;
+// }
 
-console.log(digitalRoot(n));
+// console.log(digitalRoot(n));
