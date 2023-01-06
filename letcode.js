@@ -83,19 +83,47 @@
 
 // Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
-let nums = [2, 14, 18, 22, 22];
+// let nums = [2, 14, 18, 22, 22];
 
-var containsDuplicate = function (nums) {
-  let sortArr = nums.sort((a, b) => a - b);
-  let test = false;
+// var containsDuplicate = function (nums) {
+//   let sortArr = nums.sort((a, b) => a - b);
+//   let test = false;
 
-  for (let i = 0; i < sortArr.length; i++) {
-    if (sortArr[i] === sortArr[i + 1]) {
-      test = true;
-    }
+//   for (let i = 0; i < sortArr.length; i++) {
+//     if (sortArr[i] === sortArr[i + 1]) {
+//       test = true;
+//     }
+//   }
+
+//   return test;
+// };
+
+// console.log(containsDuplicate(nums));
+
+// ----------------------------------------------------------------------
+
+// 242. Valid Anagram
+
+// Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+// An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+let s = "anagram";
+let t = "nagaraam";
+
+var isAnagram = function (s, t) {
+  if (s.length !== t.length) {
+    return false;
   }
 
-  return test;
+  let sArr = s.split("");
+  let tArr = t.split("");
+
+  for (let i = 0; i < sArr.length; i++) {
+    if (tArr.indexOf(sArr[i]) >= 0) tArr.splice(tArr.indexOf(sArr[i]), 1);
+  }
+
+  return tArr.length === 0;
 };
 
-console.log(containsDuplicate(nums));
+console.log(isAnagram(s, t));
