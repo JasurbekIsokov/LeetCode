@@ -136,18 +136,46 @@
 
 // After doing so, return the array.
 
-let arr = [17, 18, 5, 4, 6, 1];
+// let arr = [17, 18, 5, 4, 6, 1];
 
-var replaceElements = function (arr) {
-  let newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    let max = -1;
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[j] > max) max = arr[j];
+// var replaceElements = function (arr) {
+//   let newArr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     let max = -1;
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[j] > max) max = arr[j];
+//     }
+//     newArr.push(max);
+//   }
+//   return newArr;
+// };
+
+// console.log(replaceElements(arr));
+
+// ----------------------------------------------------------------------
+
+// 392. Is Subsequence
+
+// Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+
+// A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
+
+let s = "abc";
+let t = "bhagdc";
+
+const isSubsequence = (s, t) => {
+  //! Edge case
+  if (s.length > t.length) return false; //! if len of s is greater than len of t, return false because s cant be a subsequence of t
+
+  const t_length = t.length;
+  let subsequence = 0;
+  for (let i = 0; i < t_length; i++) {
+    if (s[subsequence] === t[i]) {
+      // ! if it is matching, increment subsequence
+      subsequence++;
     }
-    newArr.push(max);
   }
-  return newArr;
+  return subsequence === s.length;
 };
 
-console.log(replaceElements(arr));
+console.log(isSubsequence(s, t));
