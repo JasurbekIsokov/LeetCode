@@ -160,22 +160,48 @@
 
 // A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
 
-let s = "abc";
-let t = "bhagdc";
+// let s = "abc";
+// let t = "bhagdc";
 
-const isSubsequence = (s, t) => {
-  //! Edge case
-  if (s.length > t.length) return false; //! if len of s is greater than len of t, return false because s cant be a subsequence of t
+// const isSubsequence = (s, t) => {
+//   //! Edge case
+//   if (s.length > t.length) return false; //! if len of s is greater than len of t, return false because s cant be a subsequence of t
 
-  const t_length = t.length;
-  let subsequence = 0;
-  for (let i = 0; i < t_length; i++) {
-    if (s[subsequence] === t[i]) {
-      // ! if it is matching, increment subsequence
-      subsequence++;
+//   const t_length = t.length;
+//   let subsequence = 0;
+//   for (let i = 0; i < t_length; i++) {
+//     if (s[subsequence] === t[i]) {
+//       // ! if it is matching, increment subsequence
+//       subsequence++;
+//     }
+//   }
+//   return subsequence === s.length;
+// };
+
+// console.log(isSubsequence(s, t));
+
+// ----------------------------------------------------------------------
+
+// 1. Two Sum
+
+// Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+// You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+// You can return the answer in any order.
+
+let nums = [3, 3];
+let target = 6;
+
+var twoSum = function (nums, target) {
+  let arr = [];
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) arr.push(i, j);
     }
   }
-  return subsequence === s.length;
+
+  return arr;
 };
 
-console.log(isSubsequence(s, t));
+console.log(twoSum(nums, target));
