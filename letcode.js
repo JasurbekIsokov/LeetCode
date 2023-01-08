@@ -190,18 +190,46 @@
 
 // You can return the answer in any order.
 
-let nums = [3, 3];
-let target = 6;
+// let nums = [3, 3];
+// let target = 6;
 
-var twoSum = function (nums, target) {
-  let arr = [];
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      if (nums[i] + nums[j] === target) arr.push(i, j);
+// var twoSum = function (nums, target) {
+//   let arr = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] + nums[j] === target) arr.push(i, j);
+//     }
+//   }
+
+//   return arr;
+// };
+
+// console.log(twoSum(nums, target));
+
+// ----------------------------------------------------------------------
+
+// 118. Pascal's Triangle
+
+// Given an integer numRows, return the first numRows of Pascal's triangle.
+
+// In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
+
+let numRows = 5;
+
+var generate = function (numRows) {
+  let pascal = [];
+
+  for (let i = 0; i < numRows; i++) {
+    pascal[i] = [];
+    pascal[i][0] = 1;
+
+    for (let j = 1; j < i; j++) {
+      pascal[i][j] = pascal[i - 1][j - 1] + pascal[i - 1][j];
     }
+    pascal[i][i] = 1;
   }
 
-  return arr;
+  return pascal;
 };
 
-console.log(twoSum(nums, target));
+console.log(generate(numRows));
