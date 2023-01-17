@@ -214,22 +214,65 @@
 
 // In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
 
-let numRows = 5;
+// let numRows = 5;
 
-var generate = function (numRows) {
-  let pascal = [];
+// var generate = function (numRows) {
+//   let pascal = [];
 
-  for (let i = 0; i < numRows; i++) {
-    pascal[i] = [];
-    pascal[i][0] = 1;
+//   for (let i = 0; i < numRows; i++) {
+//     pascal[i] = [];
+//     pascal[i][0] = 1;
 
-    for (let j = 1; j < i; j++) {
-      pascal[i][j] = pascal[i - 1][j - 1] + pascal[i - 1][j];
+//     for (let j = 1; j < i; j++) {
+//       pascal[i][j] = pascal[i - 1][j - 1] + pascal[i - 1][j];
+//     }
+//     pascal[i][i] = 1;
+//   }
+
+//   return pascal;
+// };
+
+// console.log(generate(numRows));
+
+// ----------------------------------------------------------------------
+
+// 859. Buddy Strings
+
+// Given two strings s and goal, return true if you can swap two letters in s so the result is equal to goal, otherwise, return false.
+
+// Swapping letters is defined as taking two indices i and j (0-indexed) such that i != j and swapping the characters at s[i] and s[j].
+
+// For example, swapping at indices 0 and 2 in "abcd" results in "cbad".
+
+let s = "aaaaaaabc";
+let goal = "aaaaaaacb";
+
+var buddyStrings = function (s, goal) {
+  const hashmap = {};
+  let indexOfFirstWrong;
+  let output = false;
+  let hasDuplicate = false;
+  let numberOfWrongCharacter = 0;
+
+  for (let i = 0; i < goal.length; i++) {
+    if (goal[i] !== s[i] && indexOfFirstWrong === undefined) {
+      indexOfFirstWrong = i;
+      numberOfWrongCharacter++;
+    } else if (goal[i] !== s[i] && indexOfFirstWrong !== undefined) {
+      output =
+        goal[i] === s[indexOfFirstWrong] && goal[indexOfFirstWrong] === s[i];
+      numberOfWrongCharacter++;
+      if (numberOfWrongCharacter > 2) return false;
     }
-    pascal[i][i] = 1;
+
+    if (hashmap[s[i]]) hasDuplicate = true;
+
+    hashmap[s[i]] = 1;
   }
 
-  return pascal;
+  if (!numberOfWrongCharacter && hasDuplicate) return true;
+
+  return output;
 };
 
-console.log(generate(numRows));
+console.log(buddyStrings(s, goal));
