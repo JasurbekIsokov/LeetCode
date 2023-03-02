@@ -244,35 +244,74 @@
 
 // For example, swapping at indices 0 and 2 in "abcd" results in "cbad".
 
-let s = "aaaaaaabc";
-let goal = "aaaaaaacb";
+// let s = "aaaaaaabc";
+// let goal = "aaaaaaacb";
 
-var buddyStrings = function (s, goal) {
-  const hashmap = {};
-  let indexOfFirstWrong;
-  let output = false;
-  let hasDuplicate = false;
-  let numberOfWrongCharacter = 0;
+// var buddyStrings = function (s, goal) {
+//   const hashmap = {};
+//   let indexOfFirstWrong;
+//   let output = false;
+//   let hasDuplicate = false;
+//   let numberOfWrongCharacter = 0;
 
-  for (let i = 0; i < goal.length; i++) {
-    if (goal[i] !== s[i] && indexOfFirstWrong === undefined) {
-      indexOfFirstWrong = i;
-      numberOfWrongCharacter++;
-    } else if (goal[i] !== s[i] && indexOfFirstWrong !== undefined) {
-      output =
-        goal[i] === s[indexOfFirstWrong] && goal[indexOfFirstWrong] === s[i];
-      numberOfWrongCharacter++;
-      if (numberOfWrongCharacter > 2) return false;
-    }
+//   for (let i = 0; i < goal.length; i++) {
+//     if (goal[i] !== s[i] && indexOfFirstWrong === undefined) {
+//       indexOfFirstWrong = i;
+//       numberOfWrongCharacter++;
+//     } else if (goal[i] !== s[i] && indexOfFirstWrong !== undefined) {
+//       output =
+//         goal[i] === s[indexOfFirstWrong] && goal[indexOfFirstWrong] === s[i];
+//       numberOfWrongCharacter++;
+//       if (numberOfWrongCharacter > 2) return false;
+//     }
 
-    if (hashmap[s[i]]) hasDuplicate = true;
+//     if (hashmap[s[i]]) hasDuplicate = true;
 
-    hashmap[s[i]] = 1;
+//     hashmap[s[i]] = 1;
+//   }
+
+//   if (!numberOfWrongCharacter && hasDuplicate) return true;
+
+//   return output;
+// };
+
+// console.log(buddyStrings(s, goal));
+
+// ----------------------------------------------------------------------
+
+// 290. Word Pattern
+
+// Given a pattern and a string s, find if s follows the same pattern.
+
+// Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in s.
+
+let pattern = "abba";
+let s = "dog cat cat dog";
+
+function wordPattern(pattern, s) {
+  const words = s.split(" ");
+  if (pattern.length !== words.length) {
+    return false;
   }
 
-  if (!numberOfWrongCharacter && hasDuplicate) return true;
+  const map = new Map();
+  for (let i = 0; i < pattern.length; i++) {
+    const char = pattern[i];
+    const word = words[i];
 
-  return output;
-};
+    if (map.has(char)) {
+      if (map.get(char) !== word) {
+        return false;
+      }
+    } else {
+      if ([...map.values()].includes(word)) {
+        return false;
+      }
+      map.set(char, word);
+    }
+  }
 
-console.log(buddyStrings(s, goal));
+  return true;
+}
+
+console.log(wordPattern(pattern, s));
