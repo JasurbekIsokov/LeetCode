@@ -26,16 +26,37 @@
 
 // 27. Remove Element
 
-function removeElement(nums, val) {
-  let j = 0;
+// function removeElement(nums, val) {
+//   let j = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== val) {
+//       nums[j] = nums[i];
+//       j++;
+//     }
+//   }
+
+//   return j;
+// }
+
+// console.log(removeElement([3, 2, 2, 3], 3));
+
+// 26. Remove Duplicates from Sorted Array
+
+function removeDuplicates(nums) {
+  let j = nums[0];
+  let k = 1;
+
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== val) {
-      nums[j] = nums[i];
-      j++;
+    if (nums[i] !== j) {
+      nums[k] = nums[i];
+      j = nums[k];
+      k++;
     }
+
+    console.log(nums);
   }
 
-  return j;
+  return k;
 }
 
-console.log(removeElement([3, 2, 2, 3], 3));
+console.log(removeDuplicates([1, 1, 2]));
