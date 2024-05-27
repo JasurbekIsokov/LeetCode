@@ -63,26 +63,52 @@
 
 // 80. Remove Duplicates from Sorted Array II
 
-function removeDuplicates(nums) {
-  let count = 1;
-  let j = 0;
+// function removeDuplicates(nums) {
+//   let count = 1;
+//   let j = 0;
+
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === nums[i - 1]) {
+//       count++;
+//     } else {
+//       count = 1;
+//     }
+
+//     if (count <= 2) {
+//       nums[j] = nums[i];
+//       j++;
+//     }
+//   }
+
+//   console.log(nums);
+
+//   return j;
+// }
+
+// console.log(removeDuplicates([1, 1, 1, 2, 2, 3]));
+
+// 169. Majority Element
+
+function majorityElement(nums) {
+  let countObj = {};
 
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === nums[i - 1]) {
-      count++;
+    if (countObj[nums[i]]) {
+      countObj[nums[i]] = countObj[nums[i]] + 1;
     } else {
-      count = 1;
-    }
-
-    if (count <= 2) {
-      nums[j] = nums[i];
-      j++;
+      countObj[nums[i]] = 1;
     }
   }
 
-  console.log(nums);
+  let max = Object.keys(countObj)[0];
 
-  return j;
+  for (const key in countObj) {
+    if (countObj[max] < countObj[key]) {
+      max = key;
+    }
+  }
+
+  return Number(max);
 }
 
-console.log(removeDuplicates([1, 1, 1, 2, 2, 3]));
+console.log(majorityElement([3, 3, 4]));
