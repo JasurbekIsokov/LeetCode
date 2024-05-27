@@ -115,26 +115,45 @@
 
 // 189. Rotate Array
 
-function rotate(nums, k) {
-  k = k % nums.length;
+// function rotate(nums, k) {
+//   k = k % nums.length;
 
-  function reverce(nums, start, end) {
-    while (start < end) {
-      let temp = nums[start];
-      nums[start] = nums[end];
-      nums[end] = temp;
-      start++;
-      end--;
+//   function reverce(nums, start, end) {
+//     while (start < end) {
+//       let temp = nums[start];
+//       nums[start] = nums[end];
+//       nums[end] = temp;
+//       start++;
+//       end--;
+//     }
+//   }
+
+//   reverce(nums, 0, nums.length - 1);
+
+//   reverce(nums, 0, k - 1);
+
+//   reverce(nums, k, nums.length - 1);
+
+//   return nums;
+// }
+
+// console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3));
+
+// 121. Best Time to Buy and Sell Stock
+
+function maxProfit(prices) {
+  let minPrice = Infinity;
+  let maxProfit = 0;
+
+  for (let i = 0; i < prices.length; i++) {
+    if (prices[i] < minPrice) {
+      minPrice = prices[i];
+    } else if (prices[i] - minPrice > maxProfit) {
+      maxProfit = prices[i] - minPrice;
     }
   }
 
-  reverce(nums, 0, nums.length - 1);
-
-  reverce(nums, 0, k - 1);
-
-  reverce(nums, k, nums.length - 1);
-
-  return nums;
+  return maxProfit;
 }
 
-console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3));
+console.log(maxProfit([7, 1, 5, 3, 6, 4]));
