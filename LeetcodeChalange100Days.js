@@ -89,26 +89,52 @@
 
 // 169. Majority Element
 
-function majorityElement(nums) {
-  let countObj = {};
+// function majorityElement(nums) {
+//   let countObj = {};
 
-  for (let i = 0; i < nums.length; i++) {
-    if (countObj[nums[i]]) {
-      countObj[nums[i]] = countObj[nums[i]] + 1;
-    } else {
-      countObj[nums[i]] = 1;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (countObj[nums[i]]) {
+//       countObj[nums[i]] = countObj[nums[i]] + 1;
+//     } else {
+//       countObj[nums[i]] = 1;
+//     }
+//   }
+
+//   let max = Object.keys(countObj)[0];
+
+//   for (const key in countObj) {
+//     if (countObj[max] < countObj[key]) {
+//       max = key;
+//     }
+//   }
+
+//   return Number(max);
+// }
+
+// console.log(majorityElement([3, 3, 4]));
+
+// 189. Rotate Array
+
+function rotate(nums, k) {
+  k = k % nums.length;
+
+  function reverce(nums, start, end) {
+    while (start < end) {
+      let temp = nums[start];
+      nums[start] = nums[end];
+      nums[end] = temp;
+      start++;
+      end--;
     }
   }
 
-  let max = Object.keys(countObj)[0];
+  reverce(nums, 0, nums.length - 1);
 
-  for (const key in countObj) {
-    if (countObj[max] < countObj[key]) {
-      max = key;
-    }
-  }
+  reverce(nums, 0, k - 1);
 
-  return Number(max);
+  reverce(nums, k, nums.length - 1);
+
+  return nums;
 }
 
-console.log(majorityElement([3, 3, 4]));
+console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3));
