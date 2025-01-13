@@ -19,7 +19,7 @@
 //-----------------------
 // 1470. Shuffle the Array
 // const shuffle = function (nums, n) {
-//   let a1 = nums.splice(0, 3);
+//   let a1 = nums.splice(0, n);
 
 //   let newA = [];
 
