@@ -285,33 +285,33 @@
 
 // Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in s.
 
-let pattern = "abba";
-let s = "dog cat cat dog";
+// let pattern = "abba";
+// let s = "dog cat cat dog";
 
-function wordPattern(pattern, s) {
-  const words = s.split(" ");
-  if (pattern.length !== words.length) {
-    return false;
-  }
+// function wordPattern(pattern, s) {
+//   const words = s.split(" ");
+//   if (pattern.length !== words.length) {
+//     return false;
+//   }
 
-  const map = new Map();
-  for (let i = 0; i < pattern.length; i++) {
-    const char = pattern[i];
-    const word = words[i];
+//   const map = new Map();
+//   for (let i = 0; i < pattern.length; i++) {
+//     const char = pattern[i];
+//     const word = words[i];
 
-    if (map.has(char)) {
-      if (map.get(char) !== word) {
-        return false;
-      }
-    } else {
-      if ([...map.values()].includes(word)) {
-        return false;
-      }
-      map.set(char, word);
-    }
-  }
+//     if (map.has(char)) {
+//       if (map.get(char) !== word) {
+//         return false;
+//       }
+//     } else {
+//       if ([...map.values()].includes(word)) {
+//         return false;
+//       }
+//       map.set(char, word);
+//     }
+//   }
 
-  return true;
-}
+//   return true;
+// }
 
-console.log(wordPattern(pattern, s));
+// console.log(wordPattern(pattern, s));

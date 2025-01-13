@@ -1,0 +1,3 @@
+"use script";
+
+// Big O
