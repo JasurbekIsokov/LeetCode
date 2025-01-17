@@ -66,3 +66,24 @@
 // };
 
 // console.log(firstUniqChar(s));
+
+// 347
+
+// let nums = [1, 1, 1, 2, 2, 3, 3, 3, 3];
+// let k = 2;
+
+// const topKFrequent = function (nums, k) {
+//   let frequencyCounter = {};
+
+//   for (let val of nums) {
+//     frequencyCounter[val] = (frequencyCounter[val] || 0) + 1;
+//   }
+
+//   let sorted = Object.entries(frequencyCounter).sort((a, b) => b[1] - a[1]);
+
+//   let result = sorted.slice(0, k).map((item) => Number(item[0]));
+
+//   return result;
+// };
+
+// console.log(topKFrequent(nums, k));
