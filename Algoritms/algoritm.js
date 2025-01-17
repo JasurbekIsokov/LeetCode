@@ -227,3 +227,56 @@
 // **Qisqacha tarjima:** Algoritmlarning vaqt va xotira murakkabligini tushunish uchun asosiy qo‘llanma.
 
 // ---
+
+// let typeTop = (variable) => {
+//   if (variable === Infinity) {
+//     return "Infinity";
+//   } else if (variable === -Infinity) {
+//     return "-Infinity";
+//   } else if (typeof variable === undefined) {
+//     return "undefined";
+//   } else if (Number.isNaN(variable)) {
+//     return "Nan";
+//   } else if (variable === null) {
+//     return "null";
+//   } else if (Array.isArray(variable)) {
+//     return "array";
+//   } else return typeof variable;
+// };
+
+// console.log(typeTop(null));
+
+// // Test Cases
+// const testCases = [
+//   { input: Infinity, expected: "Infinity" },
+//   { input: -Infinity, expected: "-Infinity" },
+//   { input: NaN, expected: "Nan" },
+//   { input: null, expected: "null" },
+//   { input: undefined, expected: "undefined" },
+//   { input: [1, 2, 3], expected: "array" },
+//   { input: [], expected: "array" },
+//   { input: "hello", expected: "string" },
+//   { input: 42, expected: "number" },
+//   { input: true, expected: "boolean" },
+//   { input: false, expected: "boolean" },
+//   { input: () => {}, expected: "function" },
+//   { input: function test() {}, expected: "function" },
+//   { input: {}, expected: "object" },
+//   { input: new Date(), expected: "object" }, // Note: Dates are objects in this function
+//   { input: new Map(), expected: "object" },
+//   { input: new Set(), expected: "object" },
+//   { input: /regex/, expected: "object" },
+//   { input: Symbol("test"), expected: "symbol" },
+//   { input: BigInt(123), expected: "bigint" },
+// ];
+
+// // Test Runner
+// testCases.forEach(({ input, expected }, index) => {
+//   const actual = typeTop(input);
+//   console.log(
+//     `Test ${index + 1}:`,
+//     actual === expected
+//       ? "✅ Passed"
+//       : `❌ Failed (Expected: ${expected}, Got: ${actual})`
+//   );
+// });
