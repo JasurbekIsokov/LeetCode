@@ -44,3 +44,25 @@
 // };
 
 // console.log(isAnagram(s, t));
+
+// 387
+
+// let s = "leetcode";
+
+// const firstUniqChar = function (s) {
+//   let frequencyCounter = {};
+
+//   for (let val of s) {
+//     frequencyCounter[val] = (frequencyCounter[val] || 0) + 1;
+//   }
+
+//   for (let i = 0; i < s.length; i++) {
+//     if (frequencyCounter[s[i]] === 1) {
+//       return i;
+//     }
+//   }
+
+//   return -1;
+// };
+
+// console.log(firstUniqChar(s));
