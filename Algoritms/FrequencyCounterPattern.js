@@ -218,3 +218,33 @@
 // console.log(findDisappearedNumbers(nums));
 
 // ---------------------------------------------------
+// 389
+
+// let s = "a";
+// let t = "aa";
+
+// const findTheDifference = function (s, t) {
+//   let frequencyCounter1 = {};
+//   let frequencyCounter2 = {};
+
+//   for (let val of s) {
+//     frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+//   }
+
+//   for (let val of t) {
+//     frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
+//   }
+
+//   console.log(frequencyCounter1);
+//   console.log(frequencyCounter2);
+
+//   for (let key in frequencyCounter2) {
+//     if (frequencyCounter2[key] !== frequencyCounter1[key]) {
+//       return key;
+//     }
+//   }
+// };
+
+// console.log(findTheDifference(s, t));
+
+// --------------
