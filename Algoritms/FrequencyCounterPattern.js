@@ -87,3 +87,81 @@
 // };
 
 // console.log(topKFrequent(nums, k));
+// ------------------------------
+
+// 242
+
+// let s = "anagram";
+// let t = "nagaram";
+
+// const isAnagram = function (s, t) {
+//   // return s.split("").sort().join("") === t.split("").sort().join("");
+
+//   if (s.length !== t.length) {
+//     return false;
+//   }
+
+//   let frequencyCounter1 = {};
+//   let frequencyCounter2 = {};
+
+//   for (let val of s) {
+//     frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+//   }
+
+//   for (let val of t) {
+//     frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
+//   }
+
+//   for (let key in frequencyCounter1) {
+//     if (!(key in frequencyCounter2)) {
+//       return false;
+//     }
+//   }
+
+//   for (let key in frequencyCounter1) {
+//     if (frequencyCounter1[key] !== frequencyCounter2[key]) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// };
+
+// console.log(isAnagram(s, t));
+
+// 350
+
+// let nums1 = [4, 9, 5, 4];
+// let nums2 = [9, 4, 9, 8, 4];
+
+// let intersect = function (nums1, nums2) {
+//   let newArr = [];
+
+//   let frequencyCounter1 = {};
+//   let frequencyCounter2 = {};
+
+//   for (let val of nums1) {
+//     frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+//   }
+
+//   for (let val of nums2) {
+//     frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
+//   }
+
+//   console.log(frequencyCounter1, "frequencyCounter1");
+//   console.log(frequencyCounter2, "frequencyCounter2");
+
+//   for (let key in frequencyCounter1) {
+//     if (key in frequencyCounter2) {
+//       let count = Math.min(frequencyCounter1[key], frequencyCounter2[key]);
+
+//       for (let i = 0; i < count; i++) {
+//         newArr.push(Number(key));
+//       }
+//     }
+//   }
+
+//   return newArr;
+// };
+
+// console.log(intersect(nums1, nums2));
