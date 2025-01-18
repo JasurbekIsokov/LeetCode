@@ -165,3 +165,56 @@
 // };
 
 // console.log(intersect(nums1, nums2));
+
+// ---------------------------------
+
+// 448
+// const nums = [1, 2, 3, 4, 6];
+// const nums = [1, 1];
+
+// let findDisappearedNumbers = function (nums) {
+//   let n = nums.length; // 5
+//   let result = [];
+
+//   for (let i = 0; i < n; i++) { // 0, 1, 2, 3, 4
+//     let num = Math.abs(nums[i]); // 1, 2, 3, 4, 6
+
+//     if (nums[num - 1] > 0) { // [0]:1,  [1]:2, [2]:3, [3]:4
+//       nums[num - 1] = -nums[num - 1]; // nums[0]=-1, nums[1]=-2, nums[2]=-3 , nums[3]=-4,
+//     }
+//   }
+
+//   console.log(nums);
+
+//   for (let i = 0; i < n; i++) {
+//     if (nums[i] > 0) {
+//       result.push(i + 1);
+//     }
+//   }
+
+//   return result;
+// };
+
+// console.log(findDisappearedNumbers(nums));
+
+// let findDisappearedNumbers = function (nums) {
+//   let frequencyCounter = {};
+//   let result = [];
+//   let n = nums.length;
+
+//   for (let val of nums) {
+//     frequencyCounter[val] = (frequencyCounter[val] || 0) + 1;
+//   }
+
+//   for (let i = 1; i <= n; i++) {
+//     if (!frequencyCounter[i]) {
+//       result.push(i);
+//     }
+//   }
+
+//   return result;
+// };
+
+// console.log(findDisappearedNumbers(nums));
+
+// ---------------------------------------------------
