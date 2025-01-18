@@ -248,3 +248,32 @@
 // console.log(findTheDifference(s, t));
 
 // --------------
+// 383
+
+// let ransomNote = "aa";
+// let magazine = "aab";
+
+// const canConstruct = function (ransomNote, magazine) {
+//   let frequencyCounter1 = {};
+//   let frequencyCounter2 = {};
+
+//   for (let val of ransomNote) {
+//     frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+//   }
+
+//   for (let val of magazine) {
+//     frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
+//   }
+
+//   for (let key in frequencyCounter1) {
+//     if (!(frequencyCounter2[key] >= frequencyCounter1[key])) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// };
+
+// console.log(canConstruct(ransomNote, magazine));
+
+// --------------
