@@ -277,3 +277,35 @@
 // console.log(canConstruct(ransomNote, magazine));
 
 // --------------
+// 205
+
+// let s = "bbbaaaba";
+// let t = "aaabbbba";
+
+// const isIsomorphic = function (s, t) {
+//   if (s.length !== t.length) return false; // Agar uzunliklar teng bo'lmasa, izomorfik bo'lmaydi.
+
+//   const mapST = {};
+//   const mapTS = {};
+
+//   for (let i = 0; i < s.length; i++) {
+//     const charS = s[i];
+//     const charT = t[i];
+
+//     // Xarakter xaritasi bo'yicha tekshirish
+//     if (
+//       (mapST[charS] && mapST[charS] !== charT) ||
+//       (mapTS[charT] && mapTS[charT] !== charS)
+//     ) {
+//       return false;
+//     }
+
+//     // Xarakterlarni xaritaga qo'shish
+//     mapST[charS] = charT;
+//     mapTS[charT] = charS;
+//   }
+
+//   return true;
+// };
+
+// console.log(isIsomorphic(s, t));
